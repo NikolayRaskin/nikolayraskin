@@ -1,1 +1,1 @@
-# nikolayraskin
+Test task: Simple task manager.
