@@ -24,7 +24,7 @@
                                 <p class="card-text">Project: {{post.project}}</p>
                                 <p class="card-text">Description:<br>{{post.description}}</p>
                                 <p class="card-text">Due Date:<br>{{post.due_date}}</p>
-                                <p class="card-text">Status: <span class="status">{{post.status}}</span></p>
+                                <p class="card-text">Status: <span id="status">{{post.status}}</span></p>
                             </div><br>
                             {% if post.status == False %}
                                 <a href="{% url 'compliteTask' post.id %}" class='complited'><button class="btn-success">Complited</button></a><br><br>

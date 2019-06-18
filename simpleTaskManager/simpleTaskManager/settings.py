@@ -49,6 +49,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'mainPage',
     'djcelery',
+    'rest_framework',
     'django_celery_results',
     'django.contrib.admin',
     'django.contrib.auth',

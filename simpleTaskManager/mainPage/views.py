@@ -1,15 +1,29 @@
-from django.shortcuts import get_object_or_404, render,redirect
+from django.shortcuts import render,redirect
 from django.http import HttpResponseRedirect, JsonResponse
 from django.contrib import messages
+from rest_framework import viewsets
 from .models import UserMy,Project,Task
+from .serializers import UserMySerializer, ProjectSerializer, TaskSerializer
 from .forms import AddTaskForm
 import datetime
 
-# Create your views here.
+class UserView(viewsets.ModelViewSet):
+    queryset = UserMy.objects.all()
+    serializer_class = UserMySerializer
+    
+class ProjectView(viewsets.ModelViewSet):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+    
+class TaskView(viewsets.ModelViewSet):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
+    
+
 def main(request):
     taskskQuery = Task.objects.all()
     usersQuery = UserMy.objects.all()
-    #print(datetime.datetime.now().strftime("%Y-%m-%d"))
+    serializer_class = TaskSerializer
     context = {
         'taskskQuery':taskskQuery,
         'usersQuery':usersQuery,
@@ -23,7 +37,7 @@ def addTaskForm(request):
         form = AddTaskForm()
         return redirect('mainPage')
     else:
-        print('Form is\'t valid!')
+        print('Form is valid!')
     context = {
         'form':form
     }
@@ -46,7 +60,7 @@ def editTask_view(request,task_id):
         form.save()
         return redirect('mainPage')
     else:
-        print('Form is\'t valid!')
+        print('Form is valid!')
     context = {
         'form':form
     }
