@@ -48,8 +48,7 @@ class ArgumentError(Exception):
     pass
 
 try:
-	inputValue = input('N = ')
-	inputValue = int(inputValue)
+	inputValue = int(input('N = '))	
 	if inputValue % 2 == 0 and inputValue > 0:
 		print(flag(inputValue))
 	else:
