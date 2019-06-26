@@ -1,7 +1,9 @@
-Test task: Simple task manager.
+Test Task (Raskin Nikolay):
+python 3
+Japanese flag
+flag.py
 
-Admin account
-login: admin
-password: qwe
 
-Admin creates accounts for users(managers, developers). Managers can read, add, edit, delete tasks, set Complited status for task. Developer can read and set Complited status for tasks.  
+
+
+
